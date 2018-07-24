@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zgq.mapper.MapMapper">
+  <resultMap id="BaseResultMap" type="com.zgq.model.Map">
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="cityname" jdbcType="VARCHAR" property="cityname" />
+    <result column="adname" jdbcType="VARCHAR" property="adname" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="typecode" jdbcType="BIGINT" property="typecode" />
+    <result column="distance" jdbcType="BIGINT" property="distance" />
+  </resultMap>
+  <insert id="insert" parameterType="com.zgq.model.Map">
+    insert into map (name, type, cityname, 
+      adname, address, location, 
+      typecode, distance)
+    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{cityname,jdbcType=VARCHAR}, 
+      #{adname,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, 
+      #{typecode,jdbcType=BIGINT}, #{distance,jdbcType=BIGINT})
+  </insert>
+
+  <insert id="insertBanch" parameterType="java.util.List">
+    insert into map (name, type, cityname,
+    adname, address, location,
+<<<<<<< HEAD
+    typecode, distance,area) values
+    <foreach collection="list" item="map" index= "index" separator =",">
+      (#{map.name,jdbcType=VARCHAR}, #{map.type,jdbcType=VARCHAR}, #{map.cityname,jdbcType=VARCHAR},
+      #{map.adname,jdbcType=VARCHAR}, #{map.address,jdbcType=VARCHAR}, #{map.location,jdbcType=VARCHAR},
+      #{map.typecode,jdbcType=BIGINT}, #{map.distance,jdbcType=BIGINT}, #{map.area,jdbcType=VARCHAR})
+=======
+    typecode, distance) values
+    <foreach collection="list" item="map" index= "index" separator =",">
+      (#{map.name,jdbcType=VARCHAR}, #{map.type,jdbcType=VARCHAR}, #{map.cityname,jdbcType=VARCHAR},
+      #{map.adname,jdbcType=VARCHAR}, #{map.address,jdbcType=VARCHAR}, #{map.location,jdbcType=VARCHAR},
+      #{map.typecode,jdbcType=BIGINT}, #{map.distance,jdbcType=BIGINT})
+>>>>>>> cfd2e4b568963a787e3fa282c8fd20adb1c19672
+    </foreach>
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.zgq.model.Map">
+    insert into map
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="cityname != null">
+        cityname,
+      </if>
+      <if test="adname != null">
+        adname,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="typecode != null">
+        typecode,
+      </if>
+      <if test="distance != null">
+        distance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null">
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+      <if test="adname != null">
+        #{adname,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="typecode != null">
+        #{typecode,jdbcType=BIGINT},
+      </if>
+      <if test="distance != null">
+        #{distance,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

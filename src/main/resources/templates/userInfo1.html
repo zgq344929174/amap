@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:object="${userinfo}">
+        <p th:text="*{id}">
+            用户id
+        </p>
+        <p th:text="*{name}">
+            用户名称
+        </p>
+        <p th:text="*{phone}">
+            用户手机号
+        </p>
+        <p th:text="*{address}">
+            用户地址
+        </p>
+    </div>
+
+    <p th:text="${hello}">
+        hello
+    </p>
+
+
+</body>
+</html>

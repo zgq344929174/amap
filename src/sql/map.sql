@@ -1,0 +1,10 @@
+CREATE TABLE `map` (
+  `name` varchar(200) DEFAULT NULL,
+  `type` varchar(200) DEFAULT NULL,
+  `cityname` varchar(50) DEFAULT NULL,
+  `adname` varchar(50) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `location` varchar(30) DEFAULT NULL,
+  `typecode` varchar(30) DEFAULT NULL,
+  `distance` bigint(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
