@@ -22,20 +22,12 @@
 
   <insert id="insertBanch" parameterType="java.util.List">
     insert into map (name, type, cityname,
-    adname, address, location,
-<<<<<<< HEAD
-    typecode, distance,area) values
+    adname, address, location, typecode, distance,area) values
     <foreach collection="list" item="map" index= "index" separator =",">
       (#{map.name,jdbcType=VARCHAR}, #{map.type,jdbcType=VARCHAR}, #{map.cityname,jdbcType=VARCHAR},
       #{map.adname,jdbcType=VARCHAR}, #{map.address,jdbcType=VARCHAR}, #{map.location,jdbcType=VARCHAR},
       #{map.typecode,jdbcType=BIGINT}, #{map.distance,jdbcType=BIGINT}, #{map.area,jdbcType=VARCHAR})
-=======
-    typecode, distance) values
-    <foreach collection="list" item="map" index= "index" separator =",">
-      (#{map.name,jdbcType=VARCHAR}, #{map.type,jdbcType=VARCHAR}, #{map.cityname,jdbcType=VARCHAR},
-      #{map.adname,jdbcType=VARCHAR}, #{map.address,jdbcType=VARCHAR}, #{map.location,jdbcType=VARCHAR},
-      #{map.typecode,jdbcType=BIGINT}, #{map.distance,jdbcType=BIGINT})
->>>>>>> cfd2e4b568963a787e3fa282c8fd20adb1c19672
+
     </foreach>
   </insert>
 
